@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 import { ColorModeContext, UseMode } from "./theme";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import Topbar from "./scenes/global/Topbar";
@@ -18,6 +19,8 @@ import Registration from "./scenes/registration";
 // import Geograpy from "./scenes/geograpy";
 
 function App() {
+  axios.defaults.baseURL = "http://localhost:3000";
+  axios.defaults.withCredentials = true;
   const [theme, colorMode] = UseMode();
 
   return (
